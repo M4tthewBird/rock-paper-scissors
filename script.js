@@ -43,7 +43,7 @@ function playGame() {
         playRound(playerName)
         console.log(`Counter after ${i+1}. round: \n
         ${playerCounter}:${computerCounter}`)
-        if (playerCounter == 2 && computerCounter == 2) {
+        if (playerCounter == 2 && computerCounter == 2 && i == 5) {
             i -= 1
         }
     }
@@ -53,6 +53,6 @@ function playGame() {
     } else if (playerCounter == computerCounter) {
         console.log(`Its a draw!`)
     } else {
-        console.log(`${playerName} you won the 5 round game!`)
+        console.log(`${playerName} you lost the 5 round game!`)
     }
 }

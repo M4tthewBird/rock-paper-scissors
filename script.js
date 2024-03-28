@@ -36,7 +36,7 @@ function playRound(playerName) {
     }
 }
 
-function playGame() {
+/* function playGame() {
 
     for (let i = 0; i < 5; i++) {
         console.log(`Round ${i+1} results: `)
@@ -56,3 +56,5 @@ function playGame() {
         console.log(`${playerName} you lost the 5 round game!`)
     }
 }
+
+*/

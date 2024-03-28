@@ -14,14 +14,43 @@ function getUserName() {
 let playerName = getUserName();
 let playerCounter = 0;
 let computerCounter = 0;
+let playerSelection = null;
 
-function playRound(playerName) {
+document.addEventListener("DOMContentLoaded", function() {
+    const rockButton = document.querySelector("#rock-btn");
+    const paperButton = document.querySelector("#paper-btn");
+    const scissorsButton = document.querySelector("#scissors-btn");
 
+    rockButton.addEventListener("click", function(e) {
+        playerSelection = "Rock";
+        playRound(playerName, playerSelection);
+    });
+
+    paperButton.addEventListener("click", function(e) {
+        playerSelection = "Paper";
+        playRound(playerName, playerSelection);
+    });
+
+    scissorsButton.addEventListener("click", function(e) {
+        playerSelection = "Scissors";
+        playRound(playerName, playerSelection);
+    });
+});
+
+
+
+function playRound(playerName, playerSelection) {
+
+    /* USER INPUT PROMPT FOR SELECTION
+    
     let playerSelection = prompt("Enter your selection:");
     playerSelection = playerSelection.toLowerCase();
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
+
+    */
+
     let computerSelection = getComputerChoice();
-    console.log(computerSelection)
+    console.log(computerSelection) 
 
     if ((playerSelection == `Rock` && computerSelection == `Scissors`) 
     || (playerSelection == `Paper` && computerSelection == `Rock`)

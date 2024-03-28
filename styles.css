@@ -1,0 +1,44 @@
+@import url('https://fonts.cdnfonts.com/css/hero-new');
+
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: auto;
+  font-family: 'Hero New', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.img-photo {
+  width: 640px;
+  height: 400px;
+  margin-left: 24px;
+  margin-right: 0px;
+  border-radius: 8px;
+}
+
+.header,
+.first-container,
+.footer {
+  background-color: #1F2937;
+  color: #F9FAF8;
+}
+
+/* .header,
+.footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 64px;
+  align-items: center;
+} */
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+}

@@ -20,7 +20,7 @@ body {
 
 .header,
 .footer {
-  background-color: #887866;
+  background-color: #2a2438;
   color: #F9FAF8;
 }
 
@@ -71,17 +71,17 @@ body {
 button {
   border: none;
   border-radius: 8px;
-  background: #c7b198;
-  color: #1b1814;
+  background: #5b4c80;
+  color: #dbd8e3;
   margin: 16px 0;
   padding: 8px 32px;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
   transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #9b8f7879;
+  background-color: #352f44;
 }
 
 .choice-container {

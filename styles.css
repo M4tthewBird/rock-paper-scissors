@@ -36,28 +36,35 @@ body {
   font-size: 12px;
 }
 
-.score-container,
-.choice-container {
+.score-container {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
-  padding: 48px 0;
-}
-
-.score-container {
   text-align: center;
   align-items: center;
   padding: 24px 0;
   flex: 1;
 }
 
+.player-container,
+.computer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-header {
+  margin: 16px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
 #score {
-  border: solid;
+  border: none;
   border-radius: 8px;
   background: #f0ece2;
   color: #1b1814;
-  margin: 16px 0;
-  padding: 8px 32px;
+  padding: 24px 48px;
   font-size: 48px;
 }
 

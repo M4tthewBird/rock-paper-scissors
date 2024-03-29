@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const playerNameElement = document.getElementById("player-name");
     const playerScoreElement = document.getElementById("player-score");
     const computerScoreElement = document.getElementById("computer-score");
+    const infoContainer = document.querySelector(".info-container");
 
     playerNameElement.textContent = playerName;
 
@@ -43,6 +44,22 @@ document.addEventListener("DOMContentLoaded", function() {
         // Add animation class to trigger animation
         playerScoreElement.classList.add("score-animation");
         computerScoreElement.classList.add("score-animation");
+
+        if (playerCounter === 5 || computerCounter === 5) {
+            // Display the winner's name in the info container
+            const winnerName = playerCounter === 5 ? playerName : "Computer";
+            infoContainer.textContent = `${winnerName} wins!`;
+            infoContainer.style.fontSize = "32px";
+
+            
+            if (playerCounter === 5) {
+                playerScoreElement.classList.add("winning-animation");
+            } else {
+                computerScoreElement.classList.add("winning-animation");
+            }
+        }
+
+
     }
 
     const rockButton = document.querySelector("#rock-btn");
@@ -67,8 +84,6 @@ document.addEventListener("DOMContentLoaded", function() {
         updateScore();
     });
 });
-
-
 
 function playRound(playerName, playerSelection) {
 

@@ -18,6 +18,13 @@ body {
   }
 }
 
+@keyframes winningAnimation {
+  0% { transform: scale(1); background-color: #352f44; font-weight: bold; color: white; }
+  50% { transform: scale(1.5) rotate(10deg); background-color: #5c5470; font-weight: bold; color: white }
+  100% { transform: scale(1) rotate(-10deg); background-color: #dbd8e3; font-weight: bold; }
+}
+
+
 .score-animation {
   animation: scoreChange 1s ease;
 }
@@ -74,6 +81,10 @@ body {
   padding: 24px 48px;
   font-size: 24px;
   font-weight: bold;
+}
+
+.winning-animation {
+  animation: winningAnimation 0.5s ease-in-out infinite alternate;
 }
 
 .info-container {

@@ -7,7 +7,11 @@ function getComputerChoice() {
 
 function getUserName() {
     let playerName = prompt("Enter your name:");
-    playerName = playerName.charAt(0).toUpperCase() + playerName.slice(1);
+    if (playerName !== null) {
+        playerName = playerName.charAt(0).toUpperCase() + playerName.slice(1);
+    } else {
+        playerName = "Player 1"
+    }
     return playerName
 }
 
@@ -27,6 +31,18 @@ document.addEventListener("DOMContentLoaded", function() {
     function updateScore() {
         playerScoreElement.textContent = playerCounter;
         computerScoreElement.textContent = computerCounter;
+
+        // Remove existing animation class to trigger reflow
+        playerScoreElement.classList.remove("score-animation");
+        computerScoreElement.classList.remove("score-animation");
+        
+        // Force reflow to restart the animation
+        void playerScoreElement.offsetWidth;
+        void computerScoreElement.offsetWidth;
+
+        // Add animation class to trigger animation
+        playerScoreElement.classList.add("score-animation");
+        computerScoreElement.classList.add("score-animation");
     }
 
     const rockButton = document.querySelector("#rock-btn");

@@ -9,14 +9,18 @@ body {
   flex-direction: column;
 }
 
-/* .img-photo {
-  width: 640px;
-  height: 400px;
-  margin-left: 24px;
-  margin-right: 0px;
-  border-radius: 8px;
+@keyframes scoreChange {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-*/
+
+.score-animation {
+  animation: scoreChange 1s ease;
+}
 
 .header,
 .footer {

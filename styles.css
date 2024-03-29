@@ -32,6 +32,7 @@ body {
 .footer {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 40px;
   font-size: 12px;
 }
@@ -46,7 +47,8 @@ body {
 }
 
 .player-container,
-.computer-container {
+.computer-container,
+.info-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,13 +61,23 @@ body {
   font-weight: bold;
 }
 
-#score {
+#player-score,
+#computer-score {
   border: none;
   border-radius: 8px;
   background: #f0ece2;
   color: #1b1814;
   padding: 24px 48px;
-  font-size: 48px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.info-container {
+  height: fit-content;
+  font-size: 16px;
+  padding-top: 0px;
+  margin-top: 0px;
+  font-style: italic;
 }
 
 button {
@@ -104,11 +116,16 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 300px;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   width: 1200px;
+}
+
+ul {
+  margin: 8px;
+  padding-inline-start: 0px;
+  list-style: none;
 }

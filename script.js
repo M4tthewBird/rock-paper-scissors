@@ -17,6 +17,18 @@ let computerCounter = 0;
 let playerSelection = null;
 
 document.addEventListener("DOMContentLoaded", function() {
+
+    const playerNameElement = document.getElementById("player-name");
+    const playerScoreElement = document.getElementById("player-score");
+    const computerScoreElement = document.getElementById("computer-score");
+
+    playerNameElement.textContent = playerName;
+
+    function updateScore() {
+        playerScoreElement.textContent = playerCounter;
+        computerScoreElement.textContent = computerCounter;
+    }
+
     const rockButton = document.querySelector("#rock-btn");
     const paperButton = document.querySelector("#paper-btn");
     const scissorsButton = document.querySelector("#scissors-btn");
@@ -24,16 +36,19 @@ document.addEventListener("DOMContentLoaded", function() {
     rockButton.addEventListener("click", function(e) {
         playerSelection = "Rock";
         playRound(playerName, playerSelection);
+        updateScore();
     });
 
     paperButton.addEventListener("click", function(e) {
         playerSelection = "Paper";
         playRound(playerName, playerSelection);
+        updateScore();
     });
 
     scissorsButton.addEventListener("click", function(e) {
         playerSelection = "Scissors";
         playRound(playerName, playerSelection);
+        updateScore();
     });
 });
 
@@ -50,17 +65,20 @@ function playRound(playerName, playerSelection) {
     */
 
     let computerSelection = getComputerChoice();
+    let resultInfoElement = document.getElementById("result-info");
     console.log(computerSelection) 
 
     if ((playerSelection == `Rock` && computerSelection == `Scissors`) 
     || (playerSelection == `Paper` && computerSelection == `Rock`)
     || (playerSelection == `Scissors` && computerSelection == `Paper`))  {
-        console.log(`${playerName}, you won! ${playerSelection} beats ${computerSelection}`)
+        resultInfoElement.textContent = `${playerName}, you won! ${playerSelection} beats ${computerSelection}`
         playerCounter += 1;
     } else if (playerSelection == computerSelection) {
-        console.log(`Its a draw!`)
+        resultInfoElement.textContent = `Its a draw!`
+        playerCounter += 1;
+        computerCounter += 1;
     } else {
-        console.log(`${playerName}, you lost! ${computerSelection} beats ${playerSelection}`)
+        resultInfoElement.textContent = `${playerName}, you lost! ${computerSelection} beats ${playerSelection}`
         computerCounter += 1;
     }
 }
